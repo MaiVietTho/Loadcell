@@ -46,20 +46,20 @@ void loop()
     while(digitalRead(2)==0);lcd.clear();
   }
 
-  if(mainmode==0) ////////////////////////////////////// màn hình chính
+  if(mainmode==0) // man hinh chinh
         { can();
           cannang = scale.get_units(1)*hieuchinh-zero;
           if (cannang > g_SET){ digitalWrite(ROLE,HIGH); }
           else {digitalWrite(ROLE,LOW);}
         }
 
-        if(mainmode==1)  ///////////////////////////////// cai dat can
+        if(mainmode==1)  // set gia tri mong muon
         {     
           up_down();        
           chop_caidat();
           
         }
-        if(mainmode==2) ///////////////////////////////////luu gia tri
+        if(mainmode==2) //luu gia tri muon cai dat
         {    
          lcd.setCursor(0,0);lcd.print("LUU GIA TRI     ");
          lcd.setCursor(0,1);lcd.print("         CAI DAT");
