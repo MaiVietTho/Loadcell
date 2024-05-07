@@ -25,8 +25,8 @@ void setup()
 {   pinMode(LOA,OUTPUT);
     pinMode(ROLE,OUTPUT);
     lcd.begin (16,2);
-    scale.set_scale(2280.f);                      // this value is obtained by calibrating the scale with known weights; see the README for details
-    scale.tare();               // reset the scale to 0
+    scale.set_scale(2280.f);  // this value is obtained by calibrating the scale with known weights; see the README for details
+    scale.tare();             // reset the scale to 0
     pinMode(2, INPUT_PULLUP); // sử dụng điện trở kéo lên cho chân số 2, ngắt 0
     attachInterrupt(0, ngat, LOW);
     zero = scale.get_units(1)*hieuchinh;
