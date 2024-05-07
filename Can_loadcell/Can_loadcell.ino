@@ -22,7 +22,8 @@ void ngat()
 }
 
 void setup()
-{   pinMode(LOA,OUTPUT);
+{
+    pinMode(LOA,OUTPUT);
     pinMode(ROLE,OUTPUT);
     lcd.begin (16,2);
     scale.set_scale(2280.f);  // this value is obtained by calibrating the scale with known weights; see the README for details
@@ -52,35 +53,28 @@ void loop()
           if (cannang > g_SET){ digitalWrite(ROLE,HIGH); }
           else {digitalWrite(ROLE,LOW);}
         }
-
         if(mainmode==1)  // set gia tri mong muon
         {     
           up_down();        
-          chop_caidat();
-          
+          chop_caidat();  
         }
         if(mainmode==2) //luu gia tri muon cai dat
         {    
          lcd.setCursor(0,0);lcd.print("LUU GIA TRI     ");
          lcd.setCursor(0,1);lcd.print("         CAI DAT");
-          delay(1000); lcd.clear();mainmode=0;
-          
+          delay(1000); lcd.clear();mainmode=0; 
         }
-
-
-
 
 }   
 
 void can()
-{
-
-          lcd.setCursor(0, 0);  
-          lcd.print("  CAN NANG  ");
-          lcd.setCursor(13, 1);  
-          lcd.print("Gam");  
-          lcd.setCursor(4, 1);  
-          lcd.print(scale.get_units(1)*hieuchinh-zero);       
+{ 
+  lcd.setCursor(0, 0);  
+  lcd.print("  CAN NANG  ");
+  lcd.setCursor(13, 1);  
+  lcd.print("Gam");  
+  lcd.setCursor(4, 1);  
+  lcd.print(scale.get_units(1)*hieuchinh-zero);       
 }
 
 
@@ -113,10 +107,8 @@ A=a;
 
 void chop_caidat()
 {
-
-    lcd.setCursor(0,0);lcd.print("SET GIA TRI:         ");
-    lcd.setCursor(8,1);lcd.print(g_SET); lcd.setCursor(13,1);  lcd.print("Gam"); lcd.print("    "); 
-  
+  lcd.setCursor(0,0);lcd.print("SET GIA TRI:         ");
+  lcd.setCursor(8,1);lcd.print(g_SET); lcd.setCursor(13,1);  lcd.print("Gam"); lcd.print("    "); 
 }
 
 void pip_1()
